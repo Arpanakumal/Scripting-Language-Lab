@@ -1,40 +1,43 @@
-const paragraph = document.getElementById("myParagraph");
+document.addEventListener("DOMContentLoaded", () => {
+    const paragraph = document.getElementById("paragraph");
 
 
-function changeBodyBackground() {
-    document.body.style.backgroundColor = getRandomColor();
-}
+    document.getElementById("change-bg").addEventListener("click", () => {
+        document.body.style.backgroundColor = "#f0f8ff";
+    });
 
 
-function changeParagraphBackground() {
-    paragraph.style.backgroundColor = getRandomColor();
-}
+    document.getElementById("change-paragraph-bg").addEventListener("click", () => {
+        paragraph.style.backgroundColor = "#ffd700";
+    });
+
+    document.getElementById("hide-paragraph").addEventListener("click", () => {
+        paragraph.style.display = "none";
+    });
 
 
-function hideParagraph() {
-    paragraph.style.display = "none";
-}
+    document.getElementById("show-paragraph").addEventListener("click", () => {
+        paragraph.style.display = "block";
+    });
+
+    document.getElementById("increase-font").addEventListener("click", () => {
+        const currentSize = parseInt(window.getComputedStyle(paragraph).fontSize);
+        paragraph.style.fontSize = `${currentSize + 2}px`;
+    });
 
 
-function showParagraph() {
-    paragraph.style.display = "block";
-}
+    document.getElementById("decrease-font").addEventListener("click", () => {
+        const currentSize = parseInt(window.getComputedStyle(paragraph).fontSize);
+        paragraph.style.fontSize = `${currentSize - 2}px`;
+    });
 
-function increaseFontSize() {
-    const currentSize = parseInt(window.getComputedStyle(paragraph).fontSize);
-    paragraph.style.fontSize = `${currentSize + 2}px`;
-}
 
-function decreaseFontSize() {
-    const currentSize = parseInt(window.getComputedStyle(paragraph).fontSize);
-    paragraph.style.fontSize = `${currentSize - 2}px`;
-}
+    document.getElementById("reset-font").addEventListener("click", () => {
+        paragraph.style.fontSize = "12pt";
+    });
 
-function getRandomColor() {
-    const letters = "0123456789ABCDEF";
-    let color = "#";
-    for (let i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-}
+
+    document.getElementById("change-text-color").addEventListener("click", () => {
+        paragraph.style.color = "#ff4500";
+    });
+});

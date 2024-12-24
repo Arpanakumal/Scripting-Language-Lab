@@ -5,36 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paragraph Manipulation</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 50px;
+        .container {
+            margin: 20px;
         }
 
-        #myParagraph {
-            font-size: 16px;
-            padding: 20px;
-            border: 1px solid #ddd;
-            display: inline-block;
-        }
-
-        .btn {
-            padding: 10px 20px;
-            margin: 10px;
+        button {
+            margin: 5px;
+            padding: 10px;
+            color: white;
+            border: none;
             cursor: pointer;
+        }
+
+        #change-bg { background-color: blue; }
+        #change-paragraph-bg { background-color: orange; }
+        #hide-paragraph { background-color: yellow; color: black; }
+        #show-paragraph { background-color: green; }
+        #increase-font { background-color: purple; }
+        #decrease-font { background-color: teal; }
+        #reset-font { background-color: red; }
+        #change-text-color { background-color: darkblue; }
+
+        p {
+            font-size: 12pt;
+            padding: 10px;
+            border: 1px solid #ddd;
         }
     </style>
 </head>
 <body>
-
-    <button class="btn" onclick="changeBodyBackground()">Change Background</button>
-    <button class="btn" onclick="changeParagraphBackground()">Change Paragraph Background</button>
-    <button class="btn" onclick="hideParagraph()">Hide Paragraph</button>
-    <button class="btn" onclick="showParagraph()">Show Paragraph</button>
-    <button class="btn" onclick="increaseFontSize()">Increase Font Size</button>
-    <button class="btn" onclick="decreaseFontSize()">Decrease Font Size</button>
-
-    <p id="myParagraph">I am Arpana Kumal ,20 years old studying at PKMC.</p>
+    <div class="container">
+        <button id="change-bg">Change Background</button>
+        <button id="change-paragraph-bg">Change Paragraph Background</button>
+        <button id="hide-paragraph">Hide Paragraph</button>
+        <button id="show-paragraph">Show Paragraph</button>
+        <button id="increase-font">Increase Font Size by 2pt</button>
+        <button id="decrease-font">Decrease Font Size by 2pt</button>
+        <button id="reset-font">Reset Font to 12pt</button>
+        <button id="change-text-color">Change Text Color</button>
+    </div>
+    <p id="paragraph">I am Arpanan Kumal. Click the buttons above to manipulate me!</p>
 
     <script src="38.js"></script>
 </body>
