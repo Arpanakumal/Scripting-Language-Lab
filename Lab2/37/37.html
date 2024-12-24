@@ -3,20 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Table Row Manager</title>
+    <title>Table Row Manipulation with Input</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        button {
+            cursor: pointer;
+        }
+        .trash-icon {
+            cursor: pointer;
+            color: red;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 4px;
+            box-sizing: border-box;
+        }
+    </style>
 </head>
 <body>
-    <h1>Table Row Manager</h1>
-    <button onclick="addRow()">Add New Row</button>
-    <table border="1" id="dataTable">
-        <tr>
-            <th>Row</th>
-            <th>Action</th>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td><button onclick="deleteRow(this)">Delete</button></td>
-        </tr>
+    <h2>Table with Add and Remove Row Functionality (User Input)</h2>
+    <button id="add-row-btn">Add New Row</button>
+    <table id="data-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="text" value="1" /></td>
+                <td><input type="text" value="Louis Vuitton Bag" /></td>
+                <td><span class="trash-icon" onclick="removeRow(this)">🗑️</span></td>
+            </tr>
+        </tbody>
     </table>
 
     <script src="37.js"></script>
